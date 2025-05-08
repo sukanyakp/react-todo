@@ -1,0 +1,54 @@
+/* Root Variables for Theme Consistency */
+:root {
+  --snackbar-bg: #333;
+  --snackbar-text: #fff;
+  --snackbar-shadow: rgba(0, 0, 0, 0.2);
+  --snackbar-padding: 12px 20px;
+  --snackbar-radius: 6px;
+  --snackbar-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Snackbar Container */
+.snackbar {
+  visibility: hidden;
+  min-width: 280px;
+  background-color: var(--snackbar-bg);
+  color: var(--snackbar-text);
+  text-align: center;
+  padding: var(--snackbar-padding);
+  border-radius: var(--snackbar-radius);
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  box-shadow: 0 4px 10px var(--snackbar-shadow);
+  transition: var(--snackbar-transition);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 1000;
+}
+
+/* Show Snackbar */
+.snackbar.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Snackbar Close Button */
+.snackbar-close {
+  color: var(--snackbar-text);
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  transition: opacity 0.3s;
+}
+
+.snackbar-close:hover {
+  opacity: 0.7;
+}
